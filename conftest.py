@@ -3,12 +3,11 @@ from selenium import webdriver
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome", help="Type in browser n(me e.g. chrome OR firefox")
+    parser.addoption("--browser", action="store", default="chrome")
 
 
 @pytest.fixture(scope="class")
 def test_setup(request):
-
     browser = request.config.getoption("--browser")
 
     if browser == 'firefox':
